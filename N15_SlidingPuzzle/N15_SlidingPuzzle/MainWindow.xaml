@@ -11,10 +11,15 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
+        Style="{StaticResource MaterialDesignWindow}"
+
         xmlns:local="clr-namespace:N15_SlidingPuzzle"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <ToggleButton
+         IsChecked="True"
+         Style="{StaticResource MaterialDesignSwitchSecondaryToggleButton}"
+         ToolTip="MaterialDesignSwitchSecondaryToggleButton"></ToggleButton>
     </Grid>
 </Window>
