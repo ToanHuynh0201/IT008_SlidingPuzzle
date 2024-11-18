@@ -13,7 +13,7 @@
         DataContext="{StaticResource MainVM}"
         mc:Ignorable="d"
         WindowStyle="None"
-        ResizeMode="CanResizeWithGrip"
+        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Title="SettingWindow" Height="450" Width="400">
     <Grid>

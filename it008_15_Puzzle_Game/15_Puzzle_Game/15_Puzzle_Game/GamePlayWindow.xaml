@@ -16,13 +16,6 @@
         WindowStyle="ThreeDBorderWindow"
         WindowStartupLocation="CenterScreen"
         Title="GamePlayWindow" Height="675" Width="1200">
-    <Window.Resources>
-        <Storyboard x:Key="ToggleIndeterminateStoryboard">
-            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(materialDesign:ButtonProgressAssist.IsIndeterminate)">
-                <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
-            </BooleanAnimationUsingKeyFrames>
-        </Storyboard>
-    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="11*"></ColumnDefinition>
@@ -36,17 +29,32 @@
         <Grid Grid.Column="0"
               Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="8*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="3.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="3.5*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="0">
+                <Grid>
+                    <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                            Style="{StaticResource MaterialDesignFloatingActionButton}"
+                            ToolTip="MaterialDesignFloatingActionButton"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top" Margin="0,10,0,0"
+                            Width="50"
+                            Height="50">
+                        <materialDesign:PackIcon Kind="ArrowBack"
+                                                 Width="30"
+                                                 Height="30"/>
+                    </Button>
+                </Grid>
+                
+                <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
@@ -71,7 +79,7 @@
                                FontStyle="Italic"></TextBlock>
                 </Grid>
 
-                <Grid Grid.Column="1">
+                <Grid Grid.Column="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
@@ -101,7 +109,6 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*"></ColumnDefinition>
                     <ColumnDefinition Width="4*"></ColumnDefinition>
-                    <ColumnDefinition Width="4*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
@@ -129,32 +136,6 @@
                     </Button>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"></RowDefinition>
-                        <RowDefinition Height="2*"></RowDefinition>
-                    </Grid.RowDefinitions>
-
-                    <TextBlock Text="Pause"
-                               FontSize="45"
-                               FontFamily="{StaticResource mainFont}"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Bottom">
-                    </TextBlock>
-
-                    <Button Grid.Row="1"
-                            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                            Style="{StaticResource MaterialDesignFloatingActionButton}"
-                            ToolTip="MaterialDesignFloatingActionButton"
-                            Width="80"
-                            Height="80"
-                            Command="{Binding PauseCommand}"
-                            >
-                        <materialDesign:PackIcon Kind="Pause"
-                                                 Width="30"
-                                                 Height="30"></materialDesign:PackIcon>
-                    </Button>
-                </Grid>
-                <Grid Grid.Column="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"></RowDefinition>
                         <RowDefinition Height="2*"></RowDefinition>
@@ -310,16 +291,6 @@
               Grid.Row="1"
               x:Name="PuzzleGrid"
               Margin="10 10 10 10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
         </Grid>
     </Grid>
 </Window>

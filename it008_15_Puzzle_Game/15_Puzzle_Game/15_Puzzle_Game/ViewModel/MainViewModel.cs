@@ -13,7 +13,6 @@ namespace _15_Puzzle_Game.ViewModel
     {
         public ICommand PauseCommand { get; set; }
         public ICommand SettingCommand { get; set; }
-
         public ICommand CloseWindowCommand { get; set; }
 
         public event Action RequestClose;
